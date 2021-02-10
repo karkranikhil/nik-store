@@ -1,19 +1,27 @@
+import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 const Header = () => {
   return (
     <header>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
-          <Navbar.Brand href='/'>Nik Store</Navbar.Brand>
+          <LinkContainer to='/'>
+            <Navbar.Brand>Nik Store</Navbar.Brand>
+          </LinkContainer>
+
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='ml-auto'>
-              <Nav.Link href='/cart'>
-                <i className='fas fa-shopping-cart'></i>Cart
-              </Nav.Link>
-              <Nav.Link href='/login'>
-                <i className='fas fa-user'></i> Sign In
-              </Nav.Link>
+              <LinkContainer to='/cart'>
+                <Nav.Link>
+                  <i className='fas fa-shopping-cart'></i>Cart
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/login'>
+                <Nav.Link>
+                  <i className='fas fa-user'></i> Sign In
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
